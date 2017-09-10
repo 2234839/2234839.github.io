@@ -1,0 +1,71 @@
+#zhongjian img{
+	float: left;
+	width: 120px;
+	height: 100px;
+	border: 1px solid #000000;
+	margin-left: 10px;
+}
+#zhongjian{
+	margin-top: 320px;
+	margin-left: 100px;
+}
+#zhongjian h3{
+	position: absolute;
+	margin-top: -28px;
+	margin-left: 10px;
+}
+#zhongjian img:hover{/*放大图片*/
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	margin-top: -100px;
+}
+#zhongjian img:hover~#bucunzai{/*神奇的选择器使用方法*/
+	display: block;
+}
+#bucunzai{/*不存在的照片*/
+	display:none;
+}
+
+#rizhi-bg{
+	background-color: azure;
+	height: 600px;
+	width: 420px;
+	filter: blur(2px);
+	position: absolute;
+	margin-top: 430px;
+	margin-left: 100px;
+	opacity: 0.5;
+}
+#rizhi{
+	position: absolute;
+	margin-top: 430px;
+	margin-left: 100px;
+	height: 600px;
+	overflow: hidden;/*隐藏超出的文本*/
+	overflow-y:visible ;/*滚动条*/
+}
+#rizhi h3{
+	margin-left: 160px;
+}
+#rizhi pre{
+	width: 420px;
+	white-space: pre-wrap; /*自动换行*/
+	font-size: 15px;
+}
+
+#fanye{
+	position: absolute;
+	width: 8px;
+	margin-top: 580px;
+	margin-left: 40px;
+}
+#fanye a{
+	display: block;/*设置成块元素*/
+	background-color: cadetblue;
+	width: 18px;
+	margin-left: 4px;
+	border: 4px solid cadetblue;
+	color: #F9F9F9;
+	text-decoration:none
+}

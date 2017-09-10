@@ -2,15 +2,75 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title></title>
-		<link rel="stylesheet" href="css/css1.css" />
+		<title>简介</title>
+		<link rel="stylesheet" type="text/css" href="css/touxiang.css" />
+		<link rel="stylesheet" type="text/css" href="css/jianjie.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bolang.css"/>
+		<script src="js/post.js"></script>
+		<script src="js/jquery.js"></script><!--本地jq库-->
 	</head>
 	<body>
-		
+		<img id="beijing" src="img/beijing.jpg" />
+		<div id="body"><!--网页主体-->
 		<img class="bg" src="img/tukuan.jpg" />
-		<pre class="bg">
+		<div id="jianjie"><!--简介-->
+			<h3>简介</h3>
+			<pre>
+  好无聊啊
+  特无聊
+  是真的无聊
+  
+  爱好：
+  兴趣：
+  电话：
+  Q Q ：
+			</pre>
+		</div>
+		
+		<div id="touxiang" class="bg"><!--头像-->
+			<img src="img/pikaqiu.jpg" />
+			<div id="touxiang">
+				<h2>申子龙</h2>
+			</div>
+			<div id="caidan">
+				<a href="http://qzone.qq.com">QQ空间</a>
+				<a href="http://weibo.com">微博</a>
+				<a href="http://tieba.baidu.com">贴吧</a>
+				<a href="http://www.zhihu.com">知乎</a>
+				<a href="http://facebook.com">非死不可</a>
+				<a href="http://www.github.com">github</a>
+			</div>
+		</div>
+		
+		<div id="zhongjian"><!--中间的一些图片-->
+			<h3>逗比生活照</h3>
+			<img src="img/qe3.jpg" title="帅帅的正面照"/><img src="img/qe2.jpg"  title="矫健的身姿"/><img src="img/qe4.jpg"  title="拖着两头废物"/><img src="img/qe5.jpg"  title="啊！这张不是我"/><img id="bucunzai" src="img/qe1.jpg"  title="你点不到我"/>
+		</div>
+		
+		<div id="rizhi-bg"></div>
+		<div id="rizhi">
+			<h3 draggable="true">日志</h3>
+			<hr />
+			<pre id="wen">
+			</pre>
+		</div>
+		<div id="fanye">
+			<a href="javascript:get(-1)">上一篇 </a><br />
+			<a href="javascript:get(1)">下一篇 </a><br />
+			<a href="javascript:alert('并没有目录，只是放着好看')">目录 </a>
+		</div>
+		<!--
+			本网站完工于九月九日
 			
-             aaaaaaaaaaa
-		</pre> 
+			联系方式：qq:2234839456
+			
+			待更新： 目录页面 
+					登录页面
+					编辑功能
+					
+			预计更新日期：估计是不存在的
+			
+		-->
+		</div>
 	</body>
 </html>
