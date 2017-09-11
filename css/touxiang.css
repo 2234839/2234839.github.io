@@ -1,0 +1,50 @@
+.bg{
+	position: absolute;
+}
+#touxiang{
+	margin-left: 300px;
+	display:inline-block;
+}
+#caidan{
+	display: none;
+	position: absolute;
+	margin-left: 150px;
+	margin-top: -20px;
+	background-color: #f9f9f9;
+	min-width: auto;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+#touxiang:hover #caidan{
+	display:block;
+}
+#touxiang a{
+	color: black;
+	text-decoration: none;
+	display: block;
+	outline-width:3px;
+}
+#touxiang a:hover{
+	background-color: dimgray;
+}
+#touxiang h2{
+	width: 20px;
+	color:blueviolet ;
+	font-size: 25px;
+	margin-top: -105px;
+	margin-left: -260px;
+}
+#touxiang hr{
+	margin-top: -10px;
+	margin-left: -180px;
+	width: 200px;
+	size: 2px;
+	color: aqua;
+}
+#touxiang img{
+	width: 100px;
+	height: 100px;
+	margin-top: 10px;
+	margin-left:150px;
+	border-radius: 50px;
+	border: 2px solid #8A2BE2;
+}
