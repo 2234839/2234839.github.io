@@ -27,11 +27,12 @@
 	background-color: dimgray;
 }
 #touxiang h2{
+	display: block;
 	width: 20px;
 	color:blueviolet ;
 	font-size: 25px;
-	margin-top: -105px;
-	margin-left: -260px;
+	margin-top: -110px;
+	margin-left: 270px;
 }
 #touxiang hr{
 	margin-top: -10px;
