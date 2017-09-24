@@ -12,11 +12,19 @@ div h2{
 	margin-left: 25px;
 	margin-top: -3px;
 }
+body{
+	width: 450px;
+	margin-left: auto;
+	margin-right: auto;
+}
 #body{
 	width: 400px;
+	margin-left: 50px;
 }
 #jisuan{
+	width: 500px;
 	margin-top: 250px;
+	margin-left: 0px;
 }
 #jisuan div h2{
 	font-size: 25px;
@@ -26,6 +34,11 @@ div h2{
 input{
 	width: 355px;
 	height: 40px;
-	margin-left: 10px;
+	display: block;
+	margin-left: 57.25px;
 	font-size: 30px;
+}
+div:active/*鼠标按下特效*/
+{ 
+background-color:#5F9EA0;
 }
