@@ -46,7 +46,9 @@ function 新生点(){
 	return([Math.random()*(W-100)+50,	//x坐标
 			Math.random()*(H-100)+50,	//y坐标
 			5,							//初始半径
-			[~~(Math.random()*255),~~(Math.random()*255),~~(Math.random()*255)],//初始颜色	'#'+Math.floor(Math.random()*16777215).toString(16)  另外一种取随机颜色的方式
+			[~~(Math.random()*200)+55,~~(Math.random()*200)+55,~~(Math.random()*200)+55],//初始颜色 
+										//本来使用这个 ~~(Math.random()*255)  之所以将最低值设为55是为了提高生成的颜色的明度
+										//'#'+Math.floor(Math.random()*16777215).toString(16)  另外一种取随机颜色的方式
 			寿命,						//寿命  单位为调用渲染函数的 时间间隔
 			[5*Math.random()/1000*随机取负(),5*Math.random()/1000*随机取负()]])		//速度在x轴和y轴上的两个分量
 }
