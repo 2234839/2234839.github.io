@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <script src="js/new_file.js" type="text/javascript" charset="utf-8"></script>
+    <title>Title</title>
+</head>
+<style>
+    html{
+        background: radial-gradient(ellipse at center, #2A2A2A 0%, #000000 100%);
+       			/*设置背景的圆形渐变*/
+        width: 100%;
+        height:100%;
+    }
+    .sence{
+        width: 300px;
+        height:300px;
+        position: fixed;
+        top: 100px;
+        left:0;
+        right:0;
+        bottom:0px;	/*把图像的底边缘设置在其包含元素底边缘之上  0 像素高的位置：*/
+        margin: auto;
+        transform:translate(150px,-150px,-150px);
+    }
+    .box{
+        width: 300px;
+        height:300px;
+        position: relative;
+        transform-style: preserve-3d;
+        
+        
+        transform-origin: center center 75px;
+        /*允许改变转换元素的位置*/
+        /*animation:  myfirst 6s linear infinite ;*/
+        /*绑定到myfirst,动画花费时间,速度{匀速},播放次数{无限}*/
+        /*指的是匀速变化   并且原路返回*/
+    }
+    .box div{
+    	width: 300px;
+        height:300px;
+        position: absolute;
+        border-radius: 5px;
+        
+        transform-style: preserve-3d;	/*使被转换的子元素保留其 3D 转换*/
+        box-shadow: 0 0 30px 5px #fff;	/*发光效果*/
+        opacity: 0.9;
+        background-size: 300px 300px;
+        
+        font-size: 15em;
+        
+    }
+    
+    @keyframes myfirst {		/*将一套 CSS 样式逐渐变化为另一套样式*/
+        from {
+            transform:  rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        }
+        to {
+            transform:  rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+        }/*将角度从0变化到360循环往复*/
+    }
+    
+    
+    .box div:nth-child(1){
+        background-image: url(img/1.jpg);/*照片可以另行添加，也可以换成背景色*/
+        transform-origin: top;			/*设置旋转元素的基点位置*/
+        transform: rotateX(90deg) ;		/*和上面的属性配合起来实现立方体的一面*/
+    }
+    .box div:nth-child(2){
+        background-image: url(img/2.jpg);
+        transform-origin:left;
+        transform: rotateY(-90deg);
+    }
+    .box div:nth-child(3){
+     background-image: url(img/3.jpg);
+    }
+    .box div:nth-child(4){
+        background-image: url(img/4.jpg);
+        transform-origin:right;
+        transform: rotateY(90deg);
+    }
+    .box div:nth-child(5){
+        background-image: url(img/5.jpg);
+        transform-origin: bottom;
+        transform: rotateX(-90deg);
+    }
+    .box div:nth-child(6){
+        background-image: url(img/6.jpg);
+        transform: translateZ(300px);
+    }
+</style>
+<body>
+<div class="sence">
+    <div class="box">
+        <div></div>
+      
+        <div></div>
+         
+        <div></div>
+            
+        <div></div>
+           
+        <div></div>
+       
+        <div></div>
+    </div>
+</div>
+</body>
+</html>
