@@ -1,0 +1,32 @@
+#sanheyi{
+	width: 200px;
+}
+#sanheyi div{
+	float: left;
+
+	border-top:1px solid #CECFCE;
+	border-bottom:1px solid #CECFCE;
+	
+	width: 57.5px;
+	height: 25px;
+	padding-top: 10px;
+	font-size: 10px;
+	color: #5A5D5A;
+	padding-left: 5px;
+}
+#sanheyi li div{
+	border: 0px;
+	padding-top:0px;
+	
+	width: 6px;
+	height: 10px;
+	background-color: #696969;
+	border-radius:3px;
+	margin-left: -30px;
+	margin-top: 6px;
+	font-size: 10px;
+}
+#sanheyi ul{
+	list-style:none;
+}
+

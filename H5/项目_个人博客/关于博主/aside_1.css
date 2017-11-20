@@ -1,0 +1,31 @@
+#right #r5 li{
+		float: left;
+}
+#right #ra1{
+	margin-left: -30px;
+}
+#right #ra2{
+	margin-left: 5%;
+}
+#right #aside_1{
+	height: 350px;
+}
+
+#right #rimg1{
+	width: 90%;
+	margin-left:5% ;
+}
+#right #aside_1 hr{
+	width:100% ;
+
+}
+#right #r5 li{
+	list-style: none;
+}
+#right #rp1,#rp2{
+	margin-left:6% ;
+}
+
+#right #aside_1 div{
+	width: 100%;
+}

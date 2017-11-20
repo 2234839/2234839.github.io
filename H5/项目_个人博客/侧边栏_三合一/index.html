@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="index.css"/>
+		<script type="text/javascript">
+			function sanheyi_qiehuan(a){
+				var style_选中="border:1px solid #CECFCE;border-top:2px solid red;border-bottom: 0px;"
+				var style_未选中="border-top:1px solid #CECFCE;border-bottom:1px solid #CECFCE;"
+
+				var div=document.getElementById("sanheyi").getElementsByTagName("div")
+				div[0].style=style_未选中
+				div[1].style=style_未选中
+				div[2].style=style_未选中
+				
+				a.style=style_选中
+			}
+		</script>
+	</head>
+	<body>
+	<div id="sanheyi">
+		
+	
+		<div onclick="sanheyi_qiehuan(this)">精心推荐</div>
+		<div onclick="sanheyi_qiehuan(this)">最新文章</div>
+		<div onclick="sanheyi_qiehuan(this)">随机文章</div>
+		<ul>
+			<br /><br />
+			<li class="youfu"><div></div>网站项目实战开发</li>
+			<li class="youfu"><div></div>关于响应式布局</li>
+			<li class="youfu"><div></div>如何创建个人博客网站</li>
+			<li class="youfu"><div></div>网站实战项目开发</li>
+			<li class="youfu"><div></div>为什么排名总是浮动</li>
+		</ul>
+		<script type="text/javascript">
+			sanheyi_qiehuan(document.getElementById("sanheyi").getElementsByTagName("div")[0])
+			var a=document.getElementById("sanheyi").getElementsByTagName("ul")[0].getElementsByTagName("li")
+			a[0].getElementsByTagName("div")[0].style="background-color: #94C34A;"
+			a[1].getElementsByTagName("div")[0].style="background-color: #F79A00;"
+			a[2].getElementsByTagName("div")[0].style="background-color: #DC143C;"
+			a[3].getElementsByTagName("div")[0].style="background-color: #FFD700;"
+			a[4].getElementsByTagName("div")[0].style="background-color: #527071;"
+		</script>
+	</div>
+	</body>
+</html>

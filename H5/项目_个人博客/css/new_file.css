@@ -1,0 +1,54 @@
+#index nav div{
+	float: left;
+	width: 120px;
+	height: 30px;
+	margin-left: 4px;
+	border-radius: 5px ;
+	text-align:center;
+	padding-top: 5px;
+	color:#527071;
+}
+#index nav div:hover{
+		background-color:#829696;
+		cursor: Pointer;
+}
+#index {
+	background-image: url(../img/index_beijin.jpg);
+	background-size:100% 100%;
+	background-attachment:fixed;
+}
+
+#index #h1_bq{
+	color: #624061;
+}
+#index #h3_bq{
+	color: #DE7E5C;
+}
+#index #body{
+	width: 900px;
+	height: 100%;
+	margin: auto auto;
+}
+#index #div_body,aside{
+	width: 200px;
+	float: left;
+	
+	margin-top: 20px;
+	overflow:hidden;
+	
+	background-color: white;
+	box-shadow: 3px 3px 5px #888888;
+}
+#index #div_body{
+	width: 650px;
+	height:900px
+}
+#index aside{
+	margin-left: 20px;
+}
+
+.youfu:hover{	/*像右浮动的样式*/
+	transition: 1s;
+	margin-left:14px;
+	color: red;
+}

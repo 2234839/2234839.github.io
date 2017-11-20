@@ -1,0 +1,109 @@
+@font-face {
+		font-family: TWCH;
+		src: url(font/TWCH.TTF);
+	}
+.f1{
+	font-family: "TWCH";
+	letter-spacing: 30px;
+	margin-left: 40px;
+	font-style: italic;
+	text-shadow: 5px 9px 5px red;
+	font-size: 20px;
+}
+.f2,.f3,.f4,.f5,.f6{
+	font-size: 13px;
+	text-overflow: ellipsis;
+	width: 380px;
+	height: 20px;
+	white-space: nowrap;
+	overflow: hidden;
+	margin-left: 35px;
+	color: brown;
+}
+ol{
+	font-size: 13px;
+	margin-left: -20px;
+		letter-spacing: 2px;
+}
+.d41{
+	width: 200px;
+	height: 400px;
+	float: left;
+	margin-left: 35px;
+	margin-top: 10px;
+}
+.d4m1{
+	width: 200px;
+	height: 150px;
+	border-radius: 10px 10px 10px 10px;
+	opacity: 0.5;
+}
+.d4m2{
+	width: 200px;
+	height: 217px;
+	margin-top: 10px;
+	border-radius: 10px 10px 10px 10px;
+	opacity: 0.5;
+}
+.d42{
+	width: 180px;
+	height: 400px;
+	float: left;
+	margin-left: 45px;
+	margin-top: 10px;
+}
+.d42m1{
+	width: 180px;
+	height: 100px;
+	border-radius: 10px 10px 10px 10px;
+	opacity: 0.5;
+}
+.d42m2{
+	width: 180px;
+	height: 153px;
+	margin-top: 10px;
+	border-radius: 10px 10px 10px 10px;
+	opacity: 0.5;
+}
+.d42m3{
+	width: 180px;
+	height: 100px;
+	margin-top: 10px;
+	border-radius: 10px 10px 10px 10px;
+}
+.d43{
+	width: 190px;
+	height: 400px;
+	float: left;
+	margin-left: 45px;
+	margin-top: 10px;
+}
+.d43m1{
+	width: 180px;
+	height: 150px;
+	border-radius: 10px 10px 10px 10px;
+	opacity: 0.5;
+}
+.d43m2{
+	width: 180px;
+	height: 100px;
+	margin-top: 10px;
+	border-radius: 10px 10px 10px 10px;
+	opacity: 0.5;
+}
+.d43m3{
+	width: 180px;
+	height: 104px;
+	margin-top: 10px;
+	border-radius: 10px 10px 10px 10px;
+	opacity: 0.7;
+}
+.d44{
+	width: 400px;
+	height: 380px;
+	float: left;
+	margin-left: 50px;
+	margin-top: 10px;
+	border: 2px double firebrick;
+	border-radius: 100px 70px 30px 50px;
+}
