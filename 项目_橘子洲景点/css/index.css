@@ -1,0 +1,19 @@
+#myCanvas{
+	width:1700px;
+	height:1000px;
+	
+	margin-top: -350px;
+	
+	background-color: aquamarine;
+	transform:perspective(500px) rotateX(15deg) ;
+	transform-origin: 50% 100%;		/*使用第二个值[调整旋转基点] 来控制当前位置*/
+}
+
+input{
+	position: fixed;
+	margin-left:80px;
+	margin-top: -100px;
+}
+#zh{
+	margin-left:120px;
+}

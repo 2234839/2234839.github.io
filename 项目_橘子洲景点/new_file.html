@@ -1,0 +1,69 @@
+<！DOCTYPE html> 
+< html> 
+< head> 
+< script type =“text / javascript”src =“http://code.jquery.com/jquery-latest.js”>< / script> 
+< script type =“text / javascript”> 
+ var WIDTH = 500; 
+ var P = 300; 
+ jQuery（function（）{
+ function test（width，angle，p）{
+ $（'body'）。
+ append（$（'< div id = 
+ append（$（'< div id =“container”/>'）。
+ css（{
+ margin：'50px 0px' 
+ border：'1px solid black'，
+ width：width +'px'，
+'-webkit-perspective'：p 
+}）
+ append '< div id =“real”/>'）。addClass（'the_div'）。css（{'width'：width +'px'}））
+ append id =“fake”/>').addClass('the_div'））; 
+ 
+ setInterval（function（）{
+ angle + = 1; 
+ 
+ $（'＃real'）。css（{'-webkit-transform'：'rotateY（'+ angle +'deg）'}）html（width）; 
+ 
+ //初始坐标
+ var A = 0; 
+ var B = width; 
+ //翻译中心（假设-perspective-origin at 50％）
+ A  -  = width / 2; 
+ B  -  = width / 2; 
+ //新坐标
+ A = calc（A，angle * Math.PI / 180，p）; 
+ B = calc（B，angle * Math.PI / 180，p）; 
+ // translate back 
+ A + = width / 2; 
+ B + = width / 2; 
+ if（B  var realwidth = B-A; 
+ $（'＃fake'）。html（width +'< br />'+ A +'，'+ B）.css（{
+'width'：realwidth +'px'，
+'margin-left'：A +'px'
+}）; 
+ 
+ //显示调试信息
+ var debug = function（values）{return values.map（function（i）{return i +'：'+ eval（i）;}）。 （'< br />'）; } 
+ $（'＃info'）。html（$（'< div />').html(debug(['width'，'p'，'angle'，'A'，'B '，'realwidth']）））; 
+ 
+}，40）; 
+} 
+ 
+函数calc（oldx，angle，p）{
+ var x = Math.cos（angle）* oldx; 
+ var z = Math.sin（angle）* oldx; 
+ 
+ return x * p /（p + z）; 
+} 
+ 
+ test（WIDTH，0，P）; 
+}）; 
+< / script> 
+< style type =“text / css”> 
+ * {margin：0px; padding：0px; } 
+ body {padding：40px 100px; } 
+ .the_div {height：100px; border：2px solid black; background-color：rgba（255，192，0，0.5）; } 
+< / style> 
+< / head> 
+< body>< / body> 
+< / html> 
