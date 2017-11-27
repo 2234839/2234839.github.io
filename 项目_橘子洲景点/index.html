@@ -9,16 +9,30 @@
 		<title></title>
 	</head>
 	<body >		 <!-- style="overflow:hidden"-->
-		<canvas width="1700" height="1600" id="myCanvas" ></canvas>
-		<input type="button" name="" value="开始" onclick="tiaozheng()"/>
-		<input type="button" id="zh" value="转换" onclick="zhuanhaun()"/>
 		
-		<div id="top" class="qy" onmouseover="y_z=3">
-			
+		<canvas width="1700" height="1600" id="myCanvas" ></canvas>	<!--MMP又栽在没设这个宽高上-->
+		
+		<div id="top" class="qy" onmouseover="y_z=3;" onmouseout="y_z=1"></div>
+		<div id="down"  class="qy"  onmouseover="y_z=-3" onmouseout="y_z=-1"></div>
+		
+		<div  class="_zym">
+			<img src=""/>
+			<p>问天台</p>
+		</div>
+		<div  class="_zym">
+			<img src=""/>
+			<p>诗词碑</p>
+		</div>
+		<div  class="_zym">
+			<img src=""/>
+			<p>竹园</p>
+		</div>
+		<div  class="_zym">
+			<img src=""/>
+			<p>焰火广场</p>
 		</div>
 		
-		<div id="down"  class="qy"  onmouseover="y_z=-3">
-			
+		<div id="jiazai">	<!--网页加载时显示的内容-->
 		</div>
 	</body>
 </html>
