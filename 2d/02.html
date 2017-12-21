@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas style="border: 1px solid lightseagreen;" onclick="单击()"  onkeydown="input_key()" id="id-canvas" width="800" height="600"></canvas>
+	</body>
+	<script type="text/javascript">
+		function 诞生(color){return {
+			x:100,y:100,
+			r:20,m:20,
+			Vx:Math.random()*10*随机取负(),Vy:Math.random()*10*随机取负(),	//v=v+at	v+=a	v+=F/m
+			Fx:0,Fy:0,	//F=ma	a=F/m
+			g:3,
+			color:color,
+			}}
+			function 随机取负(){
+			if(Math.random()>0.5)
+				return(-1)
+			return(1)
+		}
+		cav=document.getElementById("id-canvas")
+		ctx=cav.getContext('2d')
+		e=诞生('blue')
+		function 画出来(){
+			ctx.fillStyle=e.color
+			ctx.arc(e.x,e.y,e.r,0,2*Math.PI)
+			ctx.fill()
+		}
+		
+		setInterval(function(){
+		e.x+=e.Vx
+		e.y+=e.Vy
+		画出来()
+		},30)
+	</script>
+</html>
