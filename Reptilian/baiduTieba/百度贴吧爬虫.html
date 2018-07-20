@@ -1,0 +1,147 @@
+<!--
+	作者：https://www.52pojie.cn/home.php?mod=space&uid=648892
+	时间：2018-07-20
+	描述：百度贴吧网页爬虫
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="提示">
+            <!--用来放是否可跨域的信息 -->
+		</div>
+		<input id="pNumber" type="text" placeholder="填入网址 /p/ 后面的那一串数字"/>
+		<button onclick="inspect()">检查</button>
+		<pre id="Post"></pre>
+		<div>
+			仅获取楼主的帖子<input id="getLZ" type="checkbox" checked/>
+			添加分隔线<input id="addHR" type="checkbox" checked/>
+			添加发帖时间<input id="displayTime" type="checkbox" checked/>
+			显示昵称<input id="addNAME" type="checkbox" checked/>
+			显示楼层<input id="addLC" type="checkbox" checked/>
+			<button onclick="Grab()">开始抓取</button>
+		</div>
+	</body>
+</html>
+<script>
+//检测是否可跨域
+isCrossDomain()
+//检查 输入的数值是否为正确的帖子地址
+function inspect(p,call){
+	document.getElementById("Post").innerHTML="正在检查此地址是否有效\n请稍后..."
+	var pNumber=document.getElementById("pNumber").value
+	if(p)
+		pNumber+=p
+	getDocument(`http://tieba.baidu.com/p/`+pNumber,function(doc){
+		var Post={}
+		try{
+			Post.title=doc.querySelector(".core_title_txt").title//帖子标题
+			Post.pages=doc.querySelector(".l_reply_num span:nth-child(2)").innerText//有多少页
+			Post.LZname=doc.querySelector(".p_author_name").innerText//楼主名字
+			Post.TBname=doc.querySelector(".card_title_fname").innerText//贴吧名
+			Post.pNumber=document.getElementById("pNumber").value//帖子编号
+		}catch(e){
+			alert("你输入的帖子编号可能存在错误\n请确保输入的是 网址 /p/ 后面的那一串数字")
+		}
+		if(call)
+			call(Post)
+		//输出Post对象到pre中去
+		var s=""
+		for(var property in Post) 
+			s = s+property + "\t: " + Post[property]+"\n"
+		document.getElementById("Post").innerHTML=s
+		})
+}//获取文档对象   获取src的文档对象然后发送给回调函数
+function getDocument(src,call){
+	var iframe=document.createElement('iframe')
+		iframe.src=src
+		iframe.style.display = 'none'
+	iframe.onload=function(){
+		var doc
+		try{
+			doc=iframe.contentWindow.document
+		}catch(e){
+			call("无法访问iframe 中的 dicument")
+			console.warn("无法访问iframe 中的 dicument")
+			return
+		}
+		console.warn("加载完毕")
+		call(doc)
+		try{
+			iframe.parentNode.removeChild(iframe)
+		}catch(e){
+			console.warn('移除iframe节点失败')
+		}
+	}
+	document.body.appendChild(iframe)
+}
+//检查是否可跨域
+function isCrossDomain(){
+	var div=document.getElementById("提示")
+	getDocument('http://www.baidu.com',function(doc){
+		if(typeof doc=="string")
+			document.getElementById("提示").innerHTML=`<span style="color: red;">首先请使浏览器可跨域</span>
+				<a href="https://2234839.github.io/Reptilian/baiduTieba/%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B7%A8%E5%9F%9F.html">
+					跨域方法 >请点击这里查看<
+				</a><br />`
+		else		
+			document.getElementById("提示").innerHTML=`
+				<span style="color: green;">√  可跨域</span>
+				<span style="color: yellow;background-color: green;">为了安全请不要在跨域之后的浏览器窗口进行一般的网页浏览,最好每次用完之后清除一下缓存</span>`
+	})
+}
+//开始抓取帖子内容  (起始页，结束页，回调)
+	var html=""
+function Grab(pNum,qNum,call){
+	var p='?'//参数
+
+	var addHR=document.getElementById("addHR").checked
+	var displayTime=document.getElementById("displayTime").checked
+	var addNAME=document.getElementById("addNAME").checked
+	var addLC=document.getElementById("addLC").checked
+	
+	if(document.getElementById("getLZ").checked)
+		p+='&see_lz=1'
+	inspect(p,function(d){
+		if(!qNum)
+			qNum=parseInt(d.pages)
+		if(!pNum)
+			pNum=1
+		console.log(pNum,qNum)
+		function analysisPage(j){
+			if(j-1>=qNum){
+				document.body.innerHTML+=html
+				console.log("抓取结束",j,qNum)
+				return j
+			}
+			getDocument(`http://tieba.baidu.com/p/`+d.pNumber+p+"&pn="+j,function(doc){
+				var list=doc.querySelectorAll(".l_post")// l_post是一个完整的楼层
+				for (var i = 0; i <  list.length; i++) {
+					var field
+					try{
+						field= JSON.parse(list[i].dataset.field)
+					}catch(e){//广告 他没有field
+						continue
+					}
+					html+=list[i].querySelector('.d_post_content').innerHTML//楼层主体
+					if(addNAME || displayTime)
+						html+="<br/>"
+					if(addNAME)
+						html+=`<span style="color:#2d64b3">${field.author.user_name}</span>`//名字
+					if(displayTime)
+						html+=field.content.date//发帖时间
+					if(addLC)
+						html+="    "+field.content.post_no.toString() + "楼"//楼层
+					if(addHR)
+						html+="<hr/>"
+				}
+				analysisPage(j+1)
+			})
+		}
+		analysisPage(pNum)
+	})
+}
+</script>
